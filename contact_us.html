@@ -1,0 +1,71 @@
+<! -- Contact Us page, Author: Yosha Kunnummal, Date:10th december 2019 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Contact US</title>
+ <link rel="stylesheet" href="main.css">   
+ </head>    
+<body>     
+<header>
+      <h1 class="head">Babies are the future</h1>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Tips.html">Tips</a></li>    
+            <li><a href="Recipes.html">Food recipes</a></li>
+             <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+    </header>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h2>Contact US</h2>
+ 
+            <p>We're always happy to talk to you and answer any questions.&nbsp;Please complete this form and we'll be in touch soon. Thank you.</p>            
+        <label for="FirstName">First Name</label>
+        <input type="text" id="FirstName" name="FirstName" placeholder="Enter firstname">
+        <label for="LastName">Last Name</label>
+        <input type="text" id="LastName" name="LastName" placeholder="Enter lastname">
+        <label for="EmailAddress">Enter Email</label>
+        <input type="email" id="emailID" name="EmailAddress" placeholder="Enter email" />
+         <div>
+            <label for="inquiryReason">Reason for Your Enquiry</label>
+                 
+                 <select>
+                  <option value="volvo">Select Reason</option>
+                  <option value="saab">Webpage assistance</option>
+                  <option value="mercedes">Parenting Query</option>
+                  <option value="audi">Other</option>
+                </select> 
+         </div>
+                 <label for="inquiryReason">Comment or Question</label>
+        <div>
+                      
+    <textarea id="text1" rows="10" cols="100"></textarea>
+            <br/>
+    <button onclick="sendtext()">Submit</button>    
+    </div>
+    <script type="text/javascript">                                                         /* Used Javascript in submit button */ 
+    function sendtext()    
+    {    
+            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;    /* Regular expression to verify email syntax */
+            var address = document.getElementById("emailID").value;
+                   if (reg.test(address) == false) 
+            {
+                alert('Invalid Email Address');
+                document.getElementById("emailID").value = "";                
+                return (false);
+            }
+            else{
+    document.getElementById("text1").value = "";
+    document.getElementById("emailID").value = "";       
+    document.getElementById("FirstName").value = "";
+    document.getElementById("LastName").value = "";
+    alert("Thank you ! We will contact you soon");
+            
+    } } 	
+    </script>
+   
+    <footer>2019 Copy-right . All rights reserved</footer>
+    </body>
+
+</html>
